@@ -22,9 +22,39 @@ public class GenerateService {
 				return false;
 			}
 			FileOutputStream outputPub = new FileOutputStream(rootCertificatePub);
-			outputPub.write(keyPair.get("publicKey"));
+			outputPub.write(keyPair.get("publicKey").getBytes());
+			outputPub.close();
+			FileOutputStream outputPri = new FileOutputStream(rootCertificatePub);
+			outputPri.write(keyPair.get("privateKey").getBytes());
+			outputPri.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
+		} 
+		return true;
+	}
+	
+	public static boolean generateSubKeyPare(){
+		File subCertificatePub = new File("sub.pub");
+		File subCertificatePri = new File("sub.pri");
+		if(subCertificatePri.exists() && subCertificatePub.exists() && subCertificatePri.isFile() && subCertificatePub.isFile()){
+			return true;
 		}
+		try {
+			Map<String, String> keyPair = RSA.generateKeyPair();
+			if(keyPair == null || keyPair.size() == 0){
+				return false;
+			}
+			FileOutputStream outputPub = new FileOutputStream(subCertificatePub);
+			outputPub.write(keyPair.get("publicKey").getBytes());
+			outputPub.close();
+			FileOutputStream outputPri = new FileOutputStream(subCertificatePri);
+			outputPri.write(keyPair.get("privateKey").getBytes());
+			outputPri.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} 
+		return true;
 	}
 }

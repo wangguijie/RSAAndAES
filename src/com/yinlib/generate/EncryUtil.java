@@ -1,8 +1,6 @@
 package com.yinlib.generate;
 
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 import org.apache.log4j.Logger;
 
@@ -27,16 +25,16 @@ public class EncryUtil {
 	}
 
 	/**
-	 * 返回的结果进行验�?
+	 * 返回的结果进行验�?
 	 * 
 	 * @param data
 	 *            业务数据密文
 	 * @param encrypt_key
 	 *            对ybAesKey加密后的密文
 	 * @param clientPublicKey
-	 *            客户端公�?
+	 *            客户端公�?
 	 * @param serverPrivateKey
-	 *            服务器私�?
+	 *            服务器私�?
 	 * @return 验签是否通过
 	 * @throws Exception
 	 */
@@ -60,23 +58,23 @@ public class EncryUtil {
 //				new TypeReference<TreeMap<String, String>>() {
 //				});
 //
-//		/** 3.取得data明文sign�? */
+//		/** 3.取得data明文sign�? */
 //		String sign = StringUtils.trimToEmpty(map.get("sign"));
 //
-//		/** 4.对map中的值进行验�? */
+//		/** 4.对map中的值进行验�? */
 //		StringBuffer signData = new StringBuffer();
 //		Iterator<Entry<String, String>> iter = map.entrySet().iterator();
 //		while (iter.hasNext()) {
 //			Entry<String, String> entry = iter.next();
 //
-//			/** 把sign参数隔过�? */
+//			/** 把sign参数隔过�? */
 //			if (StringUtils.equals((String) entry.getKey(), "sign")) {
 //				continue;
 //			}
 //			signData.append(entry.getValue() == null ? "" : entry.getValue());
 //		}
 //		
-//		/** 5. result为true时表明验签�?�过 */
+//		/** 5. result为true时表明验签�?�过 */
 //		boolean result = RSA.checkSign(signData.toString(), sign,
 //				clientPublicKey);
 //		return result;

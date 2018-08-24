@@ -1,0 +1,21 @@
+  {
+    "company": "CompanyNameHere",
+    "company_id": CompanyIDHere,
+    "type": "redistribute || leaf",
+    "product": "ProductNameIncludedInPorductList",
+    "model_secret": true,
+    "capability": {
+      "track": true
+    },
+    "limit": {
+      "uuid": "test_uuid",
+      "expiration": [20160501, 20160630],
+      "appid": ["com.example.app1", "com.test.*"],
+      "cores": 4,
+      "_hardware_auth": "athsa204a",
+      "_hardware_auth_key": "YWQwYWE0NWVhM2Y5MDNkOWM4ZDQxN2U4NmRmMDU1MzE="
+    },
+    "counter": {
+      "threads": 4
+    }
+  }

@@ -43,12 +43,12 @@ public class EncryptionUtil {
 					sb.append('0');
 				sb.append(cc);
 			}
-
 			return sb.toString();
 		} catch (Exception e) {
 		}
 		return "";
 	}
+	
 	// 对字符串进行sha1加密
 	public static String sha1(String str) {
 		try {
