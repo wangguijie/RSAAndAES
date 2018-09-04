@@ -33,6 +33,4 @@ public class CheckUtils {
 			throw new IllegalArgumentException(message + " must be specified");
 		}
 	}
-	
-
 }

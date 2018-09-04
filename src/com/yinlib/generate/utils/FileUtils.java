@@ -35,7 +35,7 @@ public class FileUtils {
 		}
 	}
 	
-	public static byte[] read(String path){
+	public static String read(String path){
 		if(path == null){
 			log.error("path is null!");
 			return null;
@@ -66,6 +66,6 @@ public class FileUtils {
 				}
 			}
 		}
-		return content;
+		return new String(content);
 	}
 }

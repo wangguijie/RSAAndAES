@@ -47,7 +47,7 @@ public class RSA {
 	public static final String PUBLIC_KEY = "publicKey";
 	public static final String PRIVATE_KEY = "privateKey";
 	/** 指定key的大小 */
-	private static int KEYSIZE = 1024;
+	private static int KEYSIZE = 512;
 	/**
 	 * 生成密钥
 	 */
@@ -113,7 +113,7 @@ public class RSA {
 		byte[] b = cipher.doFinal(b1);
 		return new String(b);
 	}
-
+	
 	/**
 	 * 得到公钥
 	 * 
@@ -174,8 +174,6 @@ public class RSA {
 			KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 	        byte[] encodedKey = Base64.decode2(publicKey);
 	        PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(encodedKey));
-
-		
 			java.security.Signature signature = java.security.Signature
 			.getInstance("SHA1WithRSA");
 		
